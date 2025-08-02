@@ -30,5 +30,5 @@ A sleek and interactive web app that allows users to **create**, **take**, and *
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/share-quiz.git
+git clone https://github.com/codeXsidd/share-quiz.git
 cd share-quiz
