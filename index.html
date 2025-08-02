@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Quiz</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="tab-buttons">
+            <button class="tab-button active" onclick="switchTab('editor')">Quiz Editor</button>
+            <button class="tab-button" onclick="switchTab('quiz')">Take Quiz</button>
+        </div>
+        
+        <!-- Quiz Editor Tab -->
+        <div id="editor-tab" class="tab-content active">
+            <div class="quiz-editor">
+                <h2>Create Your Quiz</h2>
+                
+                <div class="quiz-title-section">
+                    <label for="quiz-title">Quiz Title:</label>
+                    <input type="text" id="quiz-title" placeholder="Enter your quiz title..." value="Sample Quiz">
+                </div>
+                
+                <div id="questions-container">
+                    <!-- Questions will be added here dynamically -->
+                </div>
+                
+                <button class="add-question" onclick="addQuestion()">+ Add Question</button>
+                <button class="save-quiz" onclick="saveQuiz()">Save Quiz</button>
+                <button class="generate-link" onclick="generateShareableLink()">Generate Shareable Link</button>
+                
+                <div id="share-section" class="share-section hidden">
+                    <h3>Share Your Quiz</h3>
+                    <p>Share this link with others to let them take your quiz:</p>
+                    <input type="text" id="share-link" class="share-link" readonly>
+                    <button class="copy-button" onclick="copyLink()">Copy Link</button>
+                </div>
+                
+                <div id="message-container"></div>
+            </div>
+        </div>
+        
+        <!-- Quiz Taking Tab -->
+        <div id="quiz-tab" class="tab-content">
+            <div id="quiz-container">
+                <div class="quiz-header">
+                    <h2 id="quiz-title-display">Sample Quiz</h2>
+                    <p class="quiz-info">Question <span id="current-question">1</span> of <span id="total-questions">4</span></p>
+                </div>
+                
+                <div class="question-container">
+                    <div class="question-text" id="question-text">Which language runs in a web browser?</div>
+                    <ul class="answers-list" id="answers-list">
+                        <li class="answer-item">
+                            <label>
+                                <input type="radio" name="answer" value="a">
+                                <span id="answer-a">Java</span>
+                            </label>
+                        </li>
+                        <li class="answer-item">
+                            <label>
+                                <input type="radio" name="answer" value="b">
+                                <span id="answer-b">C</span>
+                            </label>
+                        </li>
+                        <li class="answer-item">
+                            <label>
+                                <input type="radio" name="answer" value="c">
+                                <span id="answer-c">Python</span>
+                            </label>
+                        </li>
+                        <li class="answer-item">
+                            <label>
+                                <input type="radio" name="answer" value="d">
+                                <span id="answer-d">JavaScript</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                
+                <button class="submit-button" onclick="submitAnswer()">Next Question</button>
+            </div>
+            
+            <div id="results-container" class="results hidden">
+                <div class="score" id="final-score">4/4</div>
+                <div class="score-text">Congratulations! You completed the quiz!</div>
+                <button class="retry-button" onclick="restartQuiz()">Take Quiz Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
