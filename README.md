@@ -31,4 +31,4 @@ A sleek and interactive web app that allows users to **create**, **take**, and *
 
 ```bash
 git clone https://github.com/codeXsidd/share-quiz.git
-cd share-quiz
+
